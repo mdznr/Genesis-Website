@@ -1,0 +1,233 @@
+/*
+YUI 3.5.1 (build 22)
+Copyright 2012 Yahoo! Inc. All rights reserved.
+Licensed under the BSD License.
+http://yuilibrary.com/license/
+*/
+html{color:#000;background:#f9f9f9;background:url(linen.jpg) repeat;padding-bottom:171px;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}
+
+body {
+	font: 18px/1 "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", sans-serif;
+	text-shadow: #fff 0 1px 0;
+	font-weight: 300;
+	width: 807px;
+	margin: auto;
+}
+
+h1 {
+	text-align: center;
+	font: normal 400 71px/1 "Sansita One", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+h3 {
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1;
+	text-align: center;
+	position: relative;
+}
+
+/* Caret. Can we blink this? */
+h3:after {
+	content: "|";
+	font-weight: bold;
+	color: #7f17b0;
+	display: none;
+}
+
+#title {
+	display: block;
+	width: 395px;
+	padding: 14px;
+	margin-top: 70.875px;
+}
+
+#icon {
+	float: left;
+}
+
+#features {
+	float: left;
+	width: 395px;
+	margin-top: 47px;
+}
+
+span {
+	display: inline-block;
+	margin-top: 31.5px;
+	padding: 12px 14px;
+	margin-left: 14px;
+	float: left;
+	clear: both;
+	cursor: pointer;
+}
+
+.selected {
+	position: relative;
+	color: #fff;
+	text-shadow: #2d0758 0 1px 0;
+	padding: 11px 13px;
+	border-radius: 5px;
+	
+	background-image: -o-linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	background-image: -moz-linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	background-image: -webkit-linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	background-image: -ms-linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	background-image: linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	
+	border: 1px solid #672E91;
+	
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.50);
+	   -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.50);
+	        box-shadow: 0px 1px 3px rgba(0,0,0,0.50);
+	
+	-webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.40);
+	   -moz-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.40);
+	        box-shadow: inset 0px 1px 0px rgba(255,255,255,0.40);
+	     
+	transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+}
+
+/* Gloss: */
+.selected:before {
+	z-index: 1;
+	opacity: .5;
+	position: absolute;
+	content: "";
+	top: 0px;
+	left: 0px;
+	height: 50%;
+	width: 100%;
+	border-radius: 4px;
+	
+	background-image: -o-linear-gradient(-90deg, #FFFFFF 0%, rgba(255,255,255,0.50) 100%);
+	background-image: -moz-linear-gradient(-90deg, #FFFFFF 0%, rgba(255,255,255,0.50) 100%);
+	background-image: -webkit-linear-gradient(-90deg, #FFFFFF 0%, rgba(255,255,255,0.50) 100%);
+	background-image: -ms-linear-gradient(-90deg, #FFFFFF 0%, rgba(255,255,255,0.50) 100%);
+	background-image: linear-gradient(-90deg, #FFFFFF 0%, rgba(255,255,255,0.50) 100%);
+}
+
+.selected:after {
+	content: "";
+	position: absolute;
+	height: 29.69848481px;
+	width: 29.69848481px;
+	top: 4px;
+	right: -13px;
+	border-radius: 5px;
+	
+	-webkit-transform: rotate(45deg);
+	
+	background-image: -o-linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	background-image: -moz-linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	background-image: -webkit-linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	background-image: -ms-linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	background-image: linear-gradient(90deg, #672E91 0%, #821CB3 100%);
+	
+	border: 1px solid #672E91;
+	
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.50);
+	   -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.50);
+	        box-shadow: 0px 1px 3px rgba(0,0,0,0.50);
+	
+	-webkit-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.40);
+	   -moz-box-shadow: inset 0px 1px 0px rgba(255,255,255,0.40);
+	        box-shadow: inset 0px 1px 0px rgba(255,255,255,0.40);
+	        
+	 z-index: 0;
+	 clip: rect(10px 10px 1000px 1000px);
+}
+
+#iosdevice {
+	width: 320px;
+	height: 480px;
+	float: right;
+	position: relative;
+}
+
+#iosdevice:before {
+	position: absolute;
+	display: block;
+	width: 340px;
+	height: 500px;
+	top: -10px;
+	left: -10px;
+	background-color: #0d0d0d;
+	content: "";
+	z-index: -1;
+}
+
+#iosdevice:after {
+	position: absolute;
+	top: -132px;
+	left: -32px;
+	width: 380px;
+	height: 753px;
+	z-index: 1;
+	display: block;
+}
+
+#iosdevice.white4s:after {
+	content: url(../resources/whiteiphone4s.png);
+}
+
+#iosdevice.white4:after {
+	content: url(../resources/whiteiphone4.png);
+}
+
+#iosdevice.black4s:after {
+	content: url(../resources/blackiphone4s.png);
+}
+
+#iosdevice.black4:after {
+	content: url(../resources/blackiphone4.png);
+}
+
+#iosdevice.whiteipad:after {
+	top: ;
+	left: ;
+	width: ;
+	height: ;
+	content: url(../resources/whiteipad.png);
+}
+
+#iosdevice.blackipad:after {
+	top: ;
+	left: ;
+	width: ;
+	height: ;
+	content: url(../resources/blackipad.png);
+}
+
+#homebutton {
+	position: relative;
+	width: 72px;
+	height: 72px;
+	left: 123px;
+	top: 28px;
+	border-radius: 40px;
+	opacity: 0;
+	z-index: 2;
+	cursor: pointer;
+	-webkit-transition: background-color .1s;
+}
+
+#homebutton:hover {
+	opacity: .02;
+	background-color: #000;
+}
+
+#homebutton:active {
+	opacity: .075;
+	background-color: #000;
+}
+
+/* Thank you, Google Web Fonts */
+@font-face {
+	font-family: 'Sansita One';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Sansita One'), local('SansitaOne'), url('r0cFg_5MCCA0Wi4i7AgXWLrIa-7acMAeDBVuclsi6Gc.woff') format('woff');
+}

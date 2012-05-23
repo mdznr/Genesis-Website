@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title>Genesis.app - a source code editor for iOS</title>
+	<link rel="stylesheet" href="style/main.css" type="text/css" media="screen">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+	
+	// To do
+	// Start autoAdvancing once video has fully loaded (move to index 1)
+	// Before advancing to next list item, check to see if that video has been fully loaded, otherwise loop
+	
+	var doesAutoAdvance = new Boolean(true);	//	Default is auto advancing
+	var currentIndex = 0;						//	Starts off at index 0 (springboard)
+	var videoDurations = new Array( 1, 5, 5, 10, 2, 10, 2 );
+
+	autoAdvancingInterval = setInterval( "autoAdvance()", (videoDurations[currentIndex])*1000 );
+	
+	var switcher = 1;
+	var shouldSwitch = new Boolean(false);
+	setInterval( "deviceSwitcher()", 1000 );
+	function deviceSwitcher()
+	{
+		if ( shouldSwitch == true ) {
+			if ( switcher == 1 ) {
+				white4s();
+			} else if ( switcher == 2 ) {
+				black4s();
+			} else if ( switcher == 3 ) {
+				white4();
+			} else {
+				black4();
+				switcher = 0;
+			}
+			switcher++;
+		}
+	}
+	function white4s() {
+		document.getElementById("iosdevice").className = "white4s";
+	}
+	function black4s() {
+		document.getElementById("iosdevice").className = "black4s";
+	}
+	function white4() {
+		document.getElementById("iosdevice").className = "white4";
+	}
+	function black4() {
+		document.getElementById("iosdevice").className = "black4";
+	}
+	
+	
+	function selectFeature(id)
+	{	
+		//	Shall it auto advance?
+		if ( id == 0 ) doesAutoAdvance = true
+		else doesAutoAdvance = false;
+		
+		$("span:nth-child("+currentIndex+")").removeClass("selected");	//	Remove selected state from prevoius index
+		$("span:nth-child("+id+")").addClass("selected");				//	Add selected state to new index
+		
+		console.log("currentIndex: "+currentIndex+"; id: "+id+"; autoAdvance: "+doesAutoAdvance);	//	For logging	
+		currentIndex = id;	//	The current is now the new index
+	}
+	
+	function autoAdvance()
+	{
+		// console.log(new Date());
+		if ( doesAutoAdvance ) {
+			$("span:nth-child("+currentIndex+")").removeClass("selected");
+			currentIndex = (currentIndex) % videoDurations.length + 1;
+			$("span:nth-child("+currentIndex+")").addClass("selected");
+			clearInterval( autoAdvancingInterval );
+			autoAdvancingInterval = setInterval( "autoAdvance()", videoDurations[currentIndex]*1000 );
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="title">
+		<img src="resources/icon.png" id="icon" height="96px" width="96px" alt="Genesis.app" />
+		<h1>Genesis</h1>
+		<h3>a source code editor for iOS</h3>
+	</div>
+	<div id="features">
+		<span onclick="selectFeature(1);">Maintain all your projects and files</span>
+		<span onclick="selectFeature(2);">Write and edit code for any language</span>
+		<span onclick="selectFeature(3);">Custom themes and syntax highlighting</span>
+		<span onclick="selectFeature(4);">Language-independent autocomplete</span>
+		<span onclick="selectFeature(5);">Compile and run your code</span>
+		<span onclick="selectFeature(6);">Free and open source</span>
+	</div>
+	<div id="iosdevice" class="white4s">
+		<video class="ambientVideo" width="320" height="480" preload="none" poster="video/springboard.png"><source class="ambientVideoSource" src="video/1.mp4" type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"></video>
+		<div id="homebutton" onclick="selectFeature(0);"></div>
+	</div>
+</body>
+</html>
+
+
