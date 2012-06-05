@@ -15,39 +15,6 @@
 
 	autoAdvancingInterval = setInterval( "autoAdvance()", (videoDurations[currentIndex])*1000 );
 	
-	var switcher = 1;
-	var shouldSwitch = new Boolean(false);
-	setInterval( "deviceSwitcher()", 1000 );
-	function deviceSwitcher()
-	{
-		if ( shouldSwitch == true ) {
-			if ( switcher == 1 ) {
-				white4s();
-			} else if ( switcher == 2 ) {
-				black4s();
-			} else if ( switcher == 3 ) {
-				white4();
-			} else {
-				black4();
-				switcher = 0;
-			}
-			switcher++;
-		}
-	}
-	function white4s() {
-		document.getElementById("iosdevice").className = "white4s";
-	}
-	function black4s() {
-		document.getElementById("iosdevice").className = "black4s";
-	}
-	function white4() {
-		document.getElementById("iosdevice").className = "white4";
-	}
-	function black4() {
-		document.getElementById("iosdevice").className = "black4";
-	}
-	
-	
 	function selectFeature(id)
 	{	
 		//	Shall it auto advance?
@@ -72,6 +39,20 @@
 			autoAdvancingInterval = setInterval( "autoAdvance()", videoDurations[currentIndex]*1000 );
 		}
 	}
+	
+	function white4s() {
+		document.getElementById("iosdevice").className = "white4s";
+	}
+	function black4s() {
+		document.getElementById("iosdevice").className = "black4s";
+	}
+	function white4() {
+		document.getElementById("iosdevice").className = "white4";
+	}
+	function black4() {
+		document.getElementById("iosdevice").className = "black4";
+	}
+	
 	</script>
 </head>
 <body>
@@ -89,10 +70,10 @@
 		<span onclick="selectFeature(6);">Free and open source</span>
 	</div>
 	<div id="iosdevice" class="white4s">
-		<video class="ambientVideo" width="320" height="480" preload="none" poster="video/springboard.png"><source class="ambientVideoSource" src="video/1.mp4" type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'"></video>
+		<video class="ambientVideo" width="320" height="480" preload="none" poster="video/springboard.png">
+			<source class="ambientVideoSource" src="video/1.mp4" type="video/mp4; codecs='avc1.42E01E, mp4a.40.2'" />
+		</video>
 		<div id="homebutton" onclick="selectFeature(0);"></div>
 	</div>
 </body>
 </html>
-
-
